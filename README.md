@@ -53,6 +53,7 @@ Follow this general loose set of guidelines when making your tests:
 4. Even though test cases are messy, try to keep them clean and remove any repetitive code you can. Create helper functions that get rid of duplicate code. 
 You will thank me later when you make a change and then have to change your tests. Duplicated code will make changing your tests more difficult.
 5. Finally, do not get too attached to your tests. Sometimes, the best way to redesign something is to just delete it and start over.
+
 **Focus on getting one test working at a time. Keep this simple.**
 
 
@@ -61,11 +62,13 @@ You will thank me later when you make a change and then have to change your test
 2. Write the skeleton of the function/module/class that the test needs.
 3. Write the comments in the skeleton and describe its working method.
 4. Change the comments to codes, improve and test until it works.
-5. Repeat above steps for other units until all are done.  
+5. Repeat above steps for other units until all are done.
+
 **Keywords：Incremental. Repeat.**
 
 
 # More Resources
+-   [nosetests - nicer testing for Python](https://nose.readthedocs.io/en/latest/man.html)
 -   [An Introduction to Distutils](https://docs.python.org/3/distutils/introduction.html?highlight=script#an-introduction-to-distutils)
 -   [distutils — Building and installing Python modules](https://docs.python.org/3/library/distutils.html)
 -   [distutils.core.setup(arguments)](https://docs.python.org/3/distutils/apiref.html?highlight=script#distutils.core.setup)
@@ -75,9 +78,9 @@ You will thank me later when you make a change and then have to change your test
 This tutorial walks you through how to package a simple Python project. 
 It will show you how to add the necessary files and structure to create the package, how to build the package, and how to upload it to the Python Package Index.
 -   [An Overview of Packaging for Python](https://packaging.python.org/overview/#bringing-your-own-python-executable)  
-This overview provides a general-purpose decision tree for reasoning about Python’s plethora of packaging options (different scenarios / purpose).   
+This overview provides a general-purpose decision tree for reasoning about Python’s plethora of packaging options (different scenarios / purpose).
 Read on to choose the best technology for your next project.
 -   [Python Modules and Packages – An Introduction](https://realpython.com/python-modules-packages/)  
-Wouldn’t it be nice if you could distinguish between when the file is loaded as a module and when it is run as a standalone script?  
-Ask and ye shall receive. When a .py file is imported as a module, Python sets the special dunder variable __name__ to the name of the module. 
+Wouldn’t it be nice if you could distinguish between when the file is loaded as a module and when it is run as a standalone script?
+Ask and ye shall receive. When a .py file is imported as a module, Python sets the special dunder variable __name__ to the name of the module.
 However, if a file is run as a standalone script, __name__ is (creatively) set to the string '__main__'.
