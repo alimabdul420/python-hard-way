@@ -66,7 +66,8 @@ You will thank me later when you make a change and then have to change your test
 6. Remove the task you finished from your pending list. Select the second easiest one.
 7. Repeat above steps for remaining tasks until all are done.  
 
-**Remember to update your list, add new tasks, remove unnecessary tasks at all times. Keep it simple, incremental and repeated.**
+**Remember to update your list, add new tasks, remove unnecessary tasks at all times.  
+Keep it simple, incremental and repeated.**
 
 
 # More Resources
