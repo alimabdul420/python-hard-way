@@ -8,19 +8,19 @@ class Sentence(object):
         self.object = obj
 
 
-def peek(word_list):              # Return the 'word_type' of one word tuple
+def peek(word_list):                # Return the 'word_type' of one word tuple
     return word_list[0][0]   
  
 
-def match(word_list):             # Take outone word tuple, and return its 'word'
-    word = word_list.pop(0)       # Can be simplified to one line：return word_list.pop(0)[1]
+def match(word_list):               # Take outone word tuple, and return its 'word'
+    word = word_list.pop(0)         # Can be simplified to one line：return word_list.pop(0)[1]
     return word[1]               
     
 
-def skip(word_list, skip_type):   # Traverse the word_list reversely, and remove all word yuple that should be ignored since the forward traverse may skip elements, for example:
-    for word in word_list[::-1]:  # When the element of index 2 is removed during the traversal, the index of its next element will change from 3 to 2. 
-        if word[0] == skip_type:  # However, the traversal won't check the New index 2 element and will continue with index 3，which means it will be skipped. 
-            word_list.remove(word)# Therefore, we need to traverse the list reversely to get rid of this issue.
+def skip(word_list, skip_type):     # Traverse the word_list reversely, and remove all word tuple that should be ignored since the forward traverse may skip elements, for example:
+    for word in word_list[::-1]:    # When the element of index 2 is removed during the traversal, the index of its next element will change from 3 to 2. 
+        if word[0] == skip_type:    # However, the traversal won't check the NEW index 2 element and will continue with index 3，which means it will be skipped. 
+            word_list.remove(word)  # Therefore, we need to traverse the list reversely to get rid of this issue.
     return word_list
 
 
@@ -47,7 +47,7 @@ def parse_object(word_list):
         raise ParserError("Expected a noun or direction next.")
 
 
-def parse_sentence(word_list):  # Analyze word_list, get its subject, verb and object, and save them in the property of the instantiated Sentence() class
+def parse_sentence(word_list):      # Analyze word_list, get its subject, verb and object, and save them in the property of the instantiated Sentence() class
     skip(word_list, 'stop')
     skip(word_list, 'error')       
     subj = parse_subject(word_list)

@@ -1,9 +1,18 @@
 # Lexicon-Scanner-Game
- A text game made by Python.
+ A text game made by Python.  
+ ![dictionary](/img/dictionary.jpg)
 
 
 # Description
  This is a little text-based adventure game made by Python. 
+ The game provides a device that lets users type phrases in various ways and then convert that into something the computer understands.  
+ For example, we'd like to have all of these phrases work the same:  
+ *open door, open the door, go THROUGH the door* OR *punch bear, Punch The Bear in the FACE*
+
+ A sentence can be a simple structure like:  
+ **Subject | Verb | Object**  
+ Obviously it gets more complex than that, and you probably did many days of annoying sentence graphs for English class.  
+ What we want is to turn the user's input into a nice sentence object that has a subject, verb, and object.
 
 
 # Prereqquisites
@@ -11,37 +20,64 @@
 2. Install nosetests
 
 
-# What's Going On?
-Here's what's happening when your browser hits your application:
-1. Your browser makes a network connection to your own computer, which is called localhost and is a standard way of saying "whatever my own computer is called on the network." It also uses port 5000.
-2. Once it connects, it makes an HTTP request to the app.py application and asks for the / URL, which is commonly the first URL on any website.
-3. Inside app.py you've got a list of URLs and what functions they match. The only one we have is the '/', 'hello_world' mapping. This means that whenever someone goes to / with a browser, flask will find the def hello_world and run it to handle the request.
-4. Now that flask has found def hello_world, it calls it to actually handle the request. This function runs and simply returns a string for what flask should send to the browser.
-5. Finally, flask has handled the request and sends this response to the browser, which is what you are seeing.
+# Lexicon used in this little game
+| <center>Type</center> |  <center>Words</center> |
+| ---          | ---    |
+| direction    |  north, south, east, west, down, up, left, rigth |
+| verb         |  go, stop, kill, eat, run |
+| noun         |  door, bear, princess, cabinet, player |
+| stop         |  the, in, of, from, at, it|
 
 
-# How the Web Works?
-1. You type in the url http://test.com/ into your browser, and it sends the request on line (A) to your computer's network interface.
-2. Your request goes out over the internet on line (B) and then to the remote computer on line (C) where my server accepts the request.
-3. Once my computer accepts it, my web application gets it on line (D), and my Python code runs the index.GET handler.
-4. The response comes out of my Python server when I return it, and it goes back to your browser over line (D) again.
-5. The server running this site takes the response off line (D), then sends it back over the internet on line (C).
-6. The response from the server then comes off the internet on line (B), and your computer's network interface hands it to your browser on line (A).
-7. Finally, your browser then displays the response.
+# How the scanner works?
+It should be alright for a user to write something a lot like English for the game and have the game figure out what it means. To do this, a module is writen that does just that.  
+This module will have a few classes that work together to handle user input and convert it into something your game can work with reliably. 
+
+This scanner will take a string of raw input from a user and return a sentence that’s composed of a list of tuples with the (TOKEN, WORD) pairings.  
+If a word isn’t part of the lexicon, then it should still return the WORD but set the TOKEN to an error token. These error tokens will tell users they messed up.  
 
 
-# Code Logic 
- 1. Create room class，instantiate each room_object，add next_path property {action: next_room_object} for each room_object
- 2. Use room_name to get room_object based on globals() dictionary {room_name：room_object}（Default value is central_corridor）
- 3. Use the action input by Player for trying to get next_room_object based on the room_object.next_path property {action: next_room_object}
- 4. If the action is valid，then get next_room_object and go to the next room. If not, then redirect back to current room.
+# Design Hints
+For this game, we need four tools:
+1. A way to loop through the list of tuples. That’s easy.
+2. A way to “match” different types of tuples that we expect in our subject-verb-object setup.
+3. A way to “peek” at a potential tuple so we can make some decisions.
+4. A way to “skip” things we do not care about, like stop words.
 
-| Language  |  Usage |
-| --- | --- |
-| HTML    |  Handle the rendering and display of webpages |
-| Python  |  Build the classes and functions, handle web app's circulation, test the functionalities of the game|
+
+# Testing Guidelines
+Follow this general loose set of guidelines when making your tests:
+1. Test files go in tests/ and are named BLAH_tests.py; otherwise nosetests won’t run them. This also keeps your tests from clashing with your other code.
+2. Write one test file for each module you make.
+3. Keep your test cases (functions) short, but do not worry if they are a bit messy. Test cases are usually kind of messy.
+4. Even though test cases are messy, try to keep them clean and remove any repetitive code you can. Create helper functions that get rid of duplicate code. 
+You will thank me later when you make a change and then have to change your tests. Duplicated code will make changing your tests more difficult.
+5. Finally, do not get too attached to your tests. Sometimes, the best way to redesign something is to just delete it and start over.
+**Focus on getting one test working at a time. Keep this simple.**
+
+
+# A simple way of coding: 
+1. Breakdown the requirement, write a failure test code for one unit based on the priority.
+2. Write the skeleton of the function/module/class that the test needs.
+3. Write the comments in the skeleton and describe its working method.
+4. Change the comments to codes, improve and test until it works.
+5. Repeat above steps for other units until all are done.  
+**Keywords：Incremental. Repeat.**
+
 
 # More Resources
--   [Flask - web development, one drop at a time](http://flask.pocoo.org/docs/1.0/)
--   [Jinja2 - a templating engine for Python](http://jinja.pocoo.org/docs/2.9/)
--   [nosetests - nicer testing for Python](https://nose.readthedocs.io/en/latest/man.html)
+-   [An Introduction to Distutils](https://docs.python.org/3/distutils/introduction.html?highlight=script#an-introduction-to-distutils)
+-   [distutils — Building and installing Python modules](https://docs.python.org/3/library/distutils.html)
+-   [distutils.core.setup(arguments)](https://docs.python.org/3/distutils/apiref.html?highlight=script#distutils.core.setup)
+-   [Install Packages](https://packaging.python.org/tutorials/installing-packages/#upgrading-packages)
+-   [Modifying Python's Search Path](https://docs.python.org/3/install/#modifying-python-s-search-path)
+-   [Packaging Python Projects](https://packaging.python.org/tutorials/packaging-projects/)  
+This tutorial walks you through how to package a simple Python project. 
+It will show you how to add the necessary files and structure to create the package, how to build the package, and how to upload it to the Python Package Index.
+-   [An Overview of Packaging for Python](https://packaging.python.org/overview/#bringing-your-own-python-executable)  
+This overview provides a general-purpose decision tree for reasoning about Python’s plethora of packaging options (different scenarios / purpose).   
+Read on to choose the best technology for your next project.
+-   [Python Modules and Packages – An Introduction](https://realpython.com/python-modules-packages/)  
+Wouldn’t it be nice if you could distinguish between when the file is loaded as a module and when it is run as a standalone script?  
+Ask and ye shall receive. When a .py file is imported as a module, Python sets the special dunder variable __name__ to the name of the module. 
+However, if a file is run as a standalone script, __name__ is (creatively) set to the string '__main__'.
