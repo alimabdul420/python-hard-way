@@ -64,7 +64,7 @@ You will thank me later when you make a change and then have to change your test
 4. Write the comments in the skeleton and describe its working method.
 5. Change the comments to codes, improve and test until it works.
 6. Remove the task you finished from your pending list. Select the second easiest one.
-7. Repeat above steps for remaining tasks until all are done.
+7. Repeat above steps for remaining tasks until all are done.  
 Note: Remember to update your list, add new list, remove unnecessary list at all times.
 
 **Keywords：Incremental. Repeat.**
