@@ -54,15 +54,18 @@ Follow this general loose set of guidelines when making your tests:
 You will thank me later when you make a change and then have to change your tests. Duplicated code will make changing your tests more difficult.
 5. Finally, do not get too attached to your tests. Sometimes, the best way to redesign something is to just delete it and start over.
 
-**Focus on getting one test working at a time. Keep this simple.**
+**Important: Focus on getting one test working at a time. Keep this simple.**
 
 
 # A simple way of coding: 
-1. Breakdown the requirement, write a failure test code for one unit based on the priority.
-2. Write the skeleton of the function/module/class that the test needs.
-3. Write the comments in the skeleton and describe its working method.
-4. Change the comments to codes, improve and test until it works.
-5. Repeat above steps for other units until all are done.
+1. Breakdown the requirement and make your pending task list.
+2. Select the easiest task and write a failure test code for it.
+3. Write the skeleton of the function/module/class that the test needs.
+4. Write the comments in the skeleton and describe its working method.
+5. Change the comments to codes, improve and test until it works.
+6. Remove the task you finished from your pending list. Select the second easiest one.
+7. Repeat above steps for remaining tasks until all are done.
+Note: Remember to update your list, add new list, remove unnecessary list at all times.
 
 **Keywords：Incremental. Repeat.**
 
