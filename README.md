@@ -54,7 +54,7 @@ Follow this general loose set of guidelines when making your tests:
 You will thank me later when you make a change and then have to change your tests. Duplicated code will make changing your tests more difficult.
 5. Finally, do not get too attached to your tests. Sometimes, the best way to redesign something is to just delete it and start over.
 
-**Important: Focus on getting one test working at a time. Keep this simple.**
+**Focus on getting one test working at a time. Keep this simple.**
 
 
 # A simple way of coding: 
@@ -65,9 +65,8 @@ You will thank me later when you make a change and then have to change your test
 5. Change the comments to codes, improve and test until it works.
 6. Remove the task you finished from your pending list. Select the second easiest one.
 7. Repeat above steps for remaining tasks until all are done.  
-**Note:** Remember to update your list, add new tasks, remove unnecessary tasks at all times.
 
-**Keywords：Incremental. Repeat.**
+**Remember to update your list, add new tasks, remove unnecessary tasks at all times. Keep it simple, incremental and repeated.**
 
 
 # More Resources
